@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="index,follow" />
+  <title>Expensy Support</title>
+  <style>
+    :root {
+      --bg: #0b0c10;
+      --card: #12141b;
+      --text: #eef1f6;
+      --muted: #aab2c0;
+      --border: rgba(255,255,255,.10);
+      --link: #8ab4ff;
+      --accent: #61d6a3;
+      --danger: #ff6b6b;
+    }
+
+    @media (prefers-color-scheme: light) {
+      :root {
+        --bg: #f6f7fb;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: #475569;
+        --border: rgba(15,23,42,.12);
+        --link: #1d4ed8;
+        --accent: #0f766e;
+        --danger: #b91c1c;
+      }
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    header {
+      padding: 32px 16px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    .container {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+    .title {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    h1 {
+      font-size: 28px;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      padding: 4px 10px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      color: var(--muted);
+      background: color-mix(in oklab, var(--card), transparent 15%);
+    }
+
+    main { padding: 20px 0 56px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    @media (min-width: 860px) {
+      .grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        align-items: start;
+      }
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+    }
+
+    h2 {
+      font-size: 16px;
+      margin: 0 0 10px;
+      letter-spacing: -0.01em;
+    }
+
+    p { margin: 0 0 10px; color: var(--text); }
+    .muted { color: var(--muted); }
+
+    ul { margin: 10px 0 0; padding-left: 18px; }
+    li { margin: 6px 0; }
+
+    .pillrow {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      font-size: 13px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      background: color-mix(in oklab, var(--card), transparent 10%);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 14px 0;
+    }
+
+    .callout {
+      border-left: 3px solid var(--accent);
+      padding: 10px 12px;
+      border-radius: 12px;
+      background: color-mix(in oklab, var(--card), transparent 0%);
+    }
+
+    .danger {
+      border-left-color: var(--danger);
+    }
+
+    footer {
+      padding: 18px 16px 28px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+      padding: 2px 6px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: color-mix(in oklab, var(--card), transparent 0%);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <div class="title">
+        <h1>Expensy Support</h1>
+        <span class="tag">Help, FAQ, and contact</span>
+      </div>
+      <p class="muted" style="margin-top:10px">If you need help, contact us and we’ll get back to you as soon as possible.</p>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <div class="grid">
+        <section class="card">
+          <h2>Contact</h2>
+          <p>
+            Email: <a href="mailto:support@boringsoft.org">support@boringsoft.org</a>
+          </p>
+          <p class="muted">
+            When writing, please include your device model, iOS version, and (if possible) a short description of what you expected vs what happened.
+          </p>
+
+          <div class="divider"></div>
+
+          <h2>Frequently asked questions</h2>
+
+          <p><strong>How do I add an expense?</strong></p>
+          <p class="muted">Open Expensy → tap the add button → enter amount → pick a category → Save.</p>
+
+          <p><strong>How do I edit or delete an expense?</strong></p>
+          <p class="muted">Open the expense from your list to edit details. Use the delete action to remove it.</p>
+
+          <p><strong>Can I use Expensy offline?</strong></p>
+          <p class="muted">Yes. Expensy is designed to work offline-first, so you can view and add expenses without an internet connection.</p>
+
+          <p><strong>How do I export my data?</strong></p>
+          <p class="muted">Go to the Export section in the app and choose a format (CSV / PDF / Accountant Pack). Some exports may require a subscription.</p>
+
+          <div class="divider"></div>
+
+          <h2>Subscriptions & purchases</h2>
+          <p><strong>How do I restore purchases?</strong></p>
+          <p class="muted">In Expensy, open Settings/More → tap <em>Restore Purchases</em>.</p>
+
+          <p><strong>I’m subscribed but Pro isn’t enabled</strong></p>
+          <p class="muted">Try Restore Purchases first. If it still doesn’t unlock, email us and include the Apple ID country/region you’re using and the approximate purchase date.</p>
+
+          <div class="callout" style="margin-top:12px">
+            <p style="margin:0"><strong>Tip:</strong> Apple manages billing. You can view or cancel subscriptions in iOS Settings → Apple ID → Subscriptions.</p>
+          </div>
+
+          <div class="divider"></div>
+
+          <h2>Account deletion</h2>
+          <p class="muted">
+            You can delete your account in the app. Look for <em>Delete Account</em> in Account/Settings.
+          </p>
+          <div class="callout danger" style="margin-top:12px">
+            <p style="margin:0"><strong>Important:</strong> Account deletion is permanent and can remove your data. Export anything you want to keep first.</p>
+          </div>
+        </section>
+
+        <aside class="card">
+          <h2>Quick links</h2>
+          <ul>
+            <li><a href="https://expenses.boringsoft.org/privacy/">Privacy Policy</a></li>
+            <li><a href="https://expenses.boringsoft.org/terms/">Terms of Service</a></li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <h2>Troubleshooting</h2>
+          <ul>
+            <li><strong>App feels stuck?</strong> Force quit and relaunch.</li>
+            <li><strong>Export not working?</strong> Ensure you’ve granted the share/save permissions when prompted.</li>
+            <li><strong>Purchase issues?</strong> Try <em>Restore Purchases</em>, then verify your subscription in iOS Settings.</li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <h2>What we may ask for</h2>
+          <p class="muted">To diagnose issues quickly, we might ask for:</p>
+          <div class="pillrow">
+            <span class="pill">iOS version</span>
+            <span class="pill">Device model</span>
+            <span class="pill">App version</span>
+            <span class="pill">Steps to reproduce</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <h2>For App Store review</h2>
+          <p class="muted" style="margin-bottom:0">
+            Support URL requirement: this page can be used as your App Store Connect Support URL (e.g. <code>/support/</code>).
+          </p>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:space-between">
+        <span>© <span id="year"></span> BoringSoft</span>
+        <span class="muted">Last updated: <span id="lastUpdated"></span></span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var now = new Date();
+      var y = document.getElementById('year');
+      if (y) y.textContent = String(now.getFullYear());
+
+      var lu = document.getElementById('lastUpdated');
+      if (lu) {
+        // Localized, but stable enough for a simple static page.
+        lu.textContent = now.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: '2-digit' });
+      }
+    })();
+  </script>
+</body>
+</html>
+
